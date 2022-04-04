@@ -1,0 +1,299 @@
+:root {
+    --primary: rgb(140, 169, 228);
+    --white: white;
+    --gray: rgb(128, 119, 119);
+    --black: rgb(80, 79, 79);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: sans-serif;
+    font-weight: lighter;
+    color: var(--white);
+    background-color: var(--primary);
+    height: 100%;
+}
+
+.my-body {
+    display: flex;
+    white-space: pre;
+    flex-direction: column;
+    color: wheat;
+}
+
+.nav {
+    left: 0px;
+    right: 0px;
+    position: fixed;
+    border-bottom: 1px solid var(--gray);
+    background-color: var(--black);
+
+}
+
+.nav__toggle {
+    position: fixed;
+    cursor: pointer;
+    margin: 0 1rem;
+    right: 0;
+}
+
+.nav__toggle svg {
+    width: 1rem;
+    fill: var(--white)
+}
+
+.nav__toggle .close {
+    display: none;
+}
+
+.nav__toggle .close,
+.nav__toggle .menu {
+    margin-top: 0.3rem;
+}
+
+.nav__checkbox {
+    display: none;
+}
+
+.nav__menu {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    align-items: center;
+    margin: 1rem;
+}
+
+.nav__menu li {
+    list-style-type: none;
+    display: none;
+}
+
+.nav__menu li:first-child {
+    margin-right: auto;
+    display: flex;
+    align-items: center;
+    text-align: center;
+}
+
+.nav__menu a {
+    text-decoration: none;
+    color: inherit;
+    font-size: 1.1rem;
+}
+
+.menu__logo {
+    height: 40px;
+
+}
+
+.menu__logo img {
+    height: 100%;
+}
+
+#nav__checkbox:checked~ul.nav__menu li {
+    display: block;
+}
+
+#nav__checkbox:checked~label.nav__toggle .close {
+    display: block;
+}
+
+#nav__checkbox:checked~label.nav__toggle .menu {
+    display: none;
+}
+
+
+
+
+
+/* contenido */
+.content-component { 
+    overflow-y: hidden;
+    top: 0px;
+    padding-left: 2%;
+    padding-right: 2%;
+    /*margin-top: 25%;*/
+    width: 95%;
+    position:relative;
+    z-index: -1;
+}
+
+
+
+
+
+/* footer  */
+footer {
+    background-color: var(--black);
+    width: 100%;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+}
+
+.footer-content {
+    border-top: 1px solid var(--gray);
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.footer-icon {
+    width: 30%;
+    margin: 0.3%;
+    display: flex;
+    position: relative;
+    flex-direction: row;
+    align-items: center;
+    color: white;
+}
+
+.social {
+    width: 65%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    text-align: center;
+}
+
+.social li {
+    width: 30%;
+    list-style-type: none;
+}
+
+.icon-social-text {
+    width: 20px;
+    fill: rgb(255, 255, 255);
+}
+
+.mrdavid {
+    border-radius: 150px;
+    width: 15%;
+}
+
+
+.footer-second {
+    border-top: 1px solid #aadcd2;
+
+    margin: 0;
+}
+
+.footer-second p,
+a {
+    text-align: center;
+    color: blanchedalmond;
+    font-size: 100%;
+    text-decoration: none;
+    line-height: 100%;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*           RESPONSIVO        */
+
+@media only screen and (min-width: 800px) {
+    .nav__toggle {
+        display: none;
+        position: fixed;
+    }
+
+    .nav__menu {
+        flex-direction: row;
+    }
+
+    .nav__menu li {
+        display: block;
+    }
+
+    /* contenido */
+    .content-component {
+        top: 0px;
+        padding-left: 2%;
+        padding-right: 2%;
+        margin-top: 10%;
+        width: 100%;  
+        overflow-y: hidden;
+        position: relative;
+        z-index: -1;
+    }
+
+    /* footer  */
+    .footer {
+        background-color: var(--black);
+        width: 100%;
+        position: fixed;
+        bottom: 0;
+        left: 0;
+    }
+
+    .footer-content {
+        border-top: 1px solid var(--gray);
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        white-space: nowrap;
+
+    }
+
+    .footer-icon {
+        width: 25%;
+        margin: 0%;
+        margin-left: 2%;
+        display: flex;
+        position: relative;
+        flex-direction: row;
+        align-items: center;
+        text-align: center;
+        color: var(--white);
+        font-size: 25px;
+    }
+
+    .icon-text-text {
+        width: 65%;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+    }
+
+    .social {
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+    }
+
+    .social li {
+        width: 12%;
+        list-style-type: none;
+    }
+
+    .icon-social-text {
+        width: 25px;
+    }
+
+    .mrdavid {
+        border-radius: 150px;
+        width: 15%;
+    }
+
+}
