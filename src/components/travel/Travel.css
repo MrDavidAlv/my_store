@@ -1,0 +1,495 @@
+
+.cardT{
+  padding: 25px 25px 50px 25px;
+  box-sizing: border-box;
+  width: 262px;
+  min-height: 410px;
+  margin: 50px 15px;
+  overflow: hidden;
+  cursor: pointer;
+  display: inline-block;
+  text-align: left;
+}
+
+.cardT *:after,
+.cardT *:before{
+  content: "";
+  display: block;
+}
+
+.watch-card{
+  background: #009DE0;
+}
+
+.plane-card{
+  background: #6284FF;
+}
+
+.bulb-card{
+  background: #00d6c1;
+}
+
+.sun-card{
+  background: #00d700;
+}
+
+
+.icon{
+  position: relative;
+  margin-bottom: 60px;
+}
+
+
+
+
+/* Watch */
+
+.watch{
+  width: 70px;
+  height: 70px;
+  box-shadow:inset 0 0 0 6px #fff, inset 0 0 0 32px #009DE0;
+  background: #fff;
+  border-radius: 50%;
+  margin: 45px 0 40px 0;
+}
+
+.watch:after,
+.watch:before{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: #fff;
+  transform-origin: left center;
+}
+
+.watch:before{
+  width: 6px;
+  height: 20px;
+  margin: -20px 0 0 -3px;
+  transform: rotate(0);
+  transform-origin: bottom center;
+  box-shadow: 0 1px 0 0 #fff;
+  border-radius: 5px 5px 0 0
+}
+
+.watch:after{
+  width: 20px;
+    height: 6px;
+    margin: -3px 0px 0px 0px;
+    transform: rotate(45deg);
+  border-radius: 0 5px 5px 0
+}
+
+.watch-card:hover .watch:before{
+  animation: watch-hours 1.3s cubic-bezier(0.645, 0.045, 0.355, 1) 1;
+}
+
+@keyframes watch-hours{
+  0%{
+    transform: rotate(0deg)
+  }
+  100%{
+    transform: rotate(360deg);
+  }
+}
+
+.watch-card:hover .watch:after{
+  animation: watch-minutes 1.3s cubic-bezier(0.645, 0.045, 0.355, 1) 1;
+}
+
+@keyframes watch-minutes{
+  0%{
+    transform: rotate(45deg)
+  }
+  100%{
+    transform: rotate(765deg);
+  }
+}
+
+
+/* Plane */
+
+.plane{
+  width: 68px;
+  height: 10px;
+  background: #fff;
+  border-radius: 10px;
+  perspective: 1000px;
+  margin: 75px 0 80px 3px;
+  transform-origin: left center;
+}
+
+.plane-card:hover .plane{
+  animation: flying 2s linear;
+}
+
+@keyframes flying {
+  0% {
+    transform: scale(1, 1);
+  }
+  
+  15%{
+    transform: scale(.8, 1);
+    left: -2px;
+  }
+  
+  20%{
+    transform: scale(1, 1);
+    left: 0;
+  }
+}
+
+.plane .wings:before,
+.plane .wings:after,
+.plane .stabilizer:before,
+.plane .stabilizer:after{
+  display: block;
+  position: absolute;
+  display: block;
+}
+
+.plane .wings:before,
+.plane .wings:after{
+  left: 18px;
+  border-left: 0px solid transparent;
+	border-right: 8px solid transparent;
+  z-index: 1
+}
+
+.plane .wings:before{
+  border-bottom: 30px solid #fff;
+	width: 8px;
+  top: -30px;
+  transform: skew(18deg);
+}
+
+.plane .wings:after{
+  border-top: 30px solid #fff;
+	width: 8px;
+  top: 10px;
+  transform: skew(-18deg);
+}
+
+.plane .stabilizer:before,
+.plane .stabilizer:after{
+  border-left: 0px solid transparent;
+	border-right: 8px solid transparent;
+  width: 8px;
+}
+
+.plane .stabilizer:before{
+  border-bottom: 13px solid #fff;
+  top: -8px;
+  left: -3px;
+  transform: skew(20deg);
+}
+
+.plane .stabilizer:after{
+  border-top: 13px solid #fff;
+  top: 5px;
+  left: -3px;
+  transform: skew(-20deg);
+}
+
+.plane:before,
+.plane:after{
+  width: 0%;
+  height: 5px;
+  display: block;
+  position: absolute;
+  z-index: 0;
+  top: 50%;
+  right: 60%;
+  transform: translateY(-50%);
+  border-radius: 0 70% 70% 0;
+  
+background: -moz-linear-gradient(top,  rgba(255,255,255,1) 0%, rgba(255,255,255,1) 33%, rgba(255,255,255,0) 34%, rgba(255,255,255,0) 65%, rgba(255,255,255,1) 66%, rgba(255,255,255,1) 100%);
+background: -webkit-linear-gradient(top,  rgba(255,255,255,1) 0%,rgba(255,255,255,1) 33%,rgba(255,255,255,0) 34%,rgba(255,255,255,0) 65%,rgba(255,255,255,1) 66%,rgba(255,255,255,1) 100%);
+background: linear-gradient(to bottom,  rgba(255,255,255,1) 0%,rgba(255,255,255,1) 33%,rgba(255,255,255,0) 34%,rgba(255,255,255,0) 65%,rgba(255,255,255,1) 66%,rgba(255,255,255,1) 100%);
+
+}
+
+.plane:before{
+  margin-top: -22px;
+}
+
+.plane:after{
+  margin-top: 22px;
+}
+
+.plane-card:hover .plane:before,
+.plane-card:hover .plane:after{
+  animation: plane-trace .6s linear;
+  animation-delay: .3s;
+}
+
+@keyframes plane-trace{
+  0%{
+    width: 0;
+  }
+  
+  50%, 100%{
+    width: 150%;
+    opacity: 1;
+    right: 100%;
+  }
+  
+  100%{
+    right: 150%;
+  }
+}
+
+
+
+/* Bulb */
+
+.bulb{
+  width: 48px;
+  height: 48px;
+  box-shadow:inset 0 0 0 6px #fff;
+  margin: 60px 0 57px 18px;
+  border-radius: 100%;
+  transform-origin: center;
+}
+
+
+.bulb:after,
+.bulb:before{
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  background: #fff;
+  
+}
+
+.bulb:before{
+  width: 18px;
+  height: 10px;
+  background: #00d6c1;
+  transform: translate(-50%, 7px);
+  border: 6px solid #fff;
+  border-top: 0;
+  border-radius: 0 0 5px 5px
+}
+
+.bulb:after{
+  width: 20px;
+  height: 6px;
+  transform: translateX(-50%) translateY(19px);
+  border-radius: 5px;
+}
+
+.bulb .gleam{
+  display: block;
+    transform-origin: center;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    position: absolute;
+}
+
+.bulb .gleam:before{
+  width: 2px;
+    height: 8px;
+    box-shadow: 0 0 0 2px #fff;
+    background: #fff;
+    display: block;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 3px;
+  margin-top: -36px;
+}
+
+.bulb .gleam:nth-of-type(4):after{
+  margin-top: 34px;
+}
+
+
+.bulb .gleam:first-of-type{
+  transform: rotate(45deg)
+}
+
+.bulb .gleam:nth-of-type(2){
+  transform: rotate(-45deg)
+}
+
+.bulb .gleam:nth-of-type(4){
+  transform: rotate(90deg)
+}
+
+.bulb .gleam:nth-of-type(5){
+  transform: rotate(-90deg)
+}
+
+.bulb-card:hover .bulb .gleam:before{
+  animation: gleam .6s cubic-bezier(0.645, 0.045, 0.355, 1) 1;
+}
+
+
+
+
+
+
+
+@keyframes gleam{
+  0%, 100%{
+    transform: translate(-50%, -50%);
+    height: 8px;
+  }
+
+  
+  50%, 60%{
+    transform: translate(-50%, 1.2em);
+    height: 2px;
+  }
+  
+  
+  75%{
+    transform: translate(-50%, -.5em);
+    height: 14px;
+  }
+  
+}
+
+
+
+
+
+/* Sun */
+
+.sun{
+  width: 44px;
+  height: 44px;
+  box-shadow:inset 0 0 0 6px #fff;
+  border-radius: 100%;
+  margin: 56px 0 65px 18px;
+}
+
+.sun-card:hover .sun{
+  animation: rotate 1.3s cubic-bezier(0.645, 0.045, 0.355, 1) 1;
+}
+
+@keyframes rotate{
+  0%{
+    transform: rotate(0)
+  }
+  
+  100%{
+    transform: rotate(90deg)
+  }
+}
+
+
+.sun .sunshine{
+  display: block;
+    transform-origin: center;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    position: absolute;
+}
+
+.sun .sunshine:after,
+.sun .sunshine:before{
+  width: 6px;
+  height: 12px;
+  background: #fff;
+  display: block;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 3px;
+}
+
+.sun .sunshine:before{
+  margin-top: -34px;
+}
+
+.sun .sunshine:after{
+  margin-top: 34px;
+}
+
+.sun .sunshine:nth-of-type(2){
+  transform: rotate(45deg)
+}
+
+.sun .sunshine:nth-of-type(3){
+  transform: rotate(90deg)
+}
+
+.sun .sunshine:nth-of-type(4){
+  transform: rotate(135deg)
+}
+
+.sun-card:hover .sun .sunshine:first-of-type:before,
+.sun-card:hover .sun .sunshine:nth-of-type(3):before,
+.sun-card:hover .sun .sunshine:first-of-type:after,
+.sun-card:hover .sun .sunshine:nth-of-type(3):after,
+.sun-card:hover .sun .sunshine:last-of-type:before,
+.sun-card:hover .sun .sunshine:nth-of-type(2):before,
+.sun-card:hover .sun .sunshine:last-of-type:after,
+.sun-card:hover .sun .sunshine:nth-of-type(2):after{
+  animation: enlarge .8s cubic-bezier(0.645, 0.045, 0.355, 1) 1;
+}
+
+.sun-card:hover .sun .sunshine:last-of-type:before,
+.sun-card:hover .sun .sunshine:nth-of-type(2):before,
+.sun-card:hover .sun .sunshine:last-of-type:after,
+.sun-card:hover .sun .sunshine:nth-of-type(2):after{
+  animation-delay: .3s;
+}
+
+
+
+@keyframes enlarge{
+  0%,100%{
+    box-shadow: 0 0 0 0 #fff;
+  }
+  
+  50%{
+    transform: scale(1.15) translate(-50%, -50%);
+  }
+}
+
+
+
+
+/* Trash */
+
+.cardT span {
+    display: block;
+    margin: 0 0 35px;
+    padding: 0;
+    font-weight: 700;
+    font-size: 12px;
+    text-transform: uppercase;
+  color: #FFF;
+    border: 0;
+    z-index: 1;
+  font-family: "SourceSansPro-Regular";
+  font-weight: initial;
+}
+
+.cardT h2{
+      font-family: "Klavika-Medium",Helvetica,Helvetica Neue,Arial;
+  color: #fff;
+  line-height: 140%;
+    margin: 25px auto 20px;
+  font-size: 18px;
+  font-weight: initial;
+}
+
+.cardT p{
+      line-height: 140%;
+    margin-bottom: 0;
+  color: #fff;
+  font-family: "SourceSansPro-Regular";
+  font-weight: initial;
+  font-size: 16px;
+}

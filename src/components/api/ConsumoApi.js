@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from "react-redux";
-import { PeticionApi } from '../actions/actions';
+import { Link } from 'react-router-dom';
+import { PeticionApi } from '../../actions/actions';
 
 
 
@@ -18,7 +19,7 @@ const ConsumoApi  = () => {
 
     return (
         <div>
-            <a href="/home">home</a>
+            <Link to="/home">home</Link>
             <h3>Cinsumir Api</h3>
             <button onClick={traerDatos}>traer datos</button>
 

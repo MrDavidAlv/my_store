@@ -1,0 +1,18 @@
+.tecnology {
+	margin-top:2em;
+}
+.imgT { 
+	display: block;
+	width: 15%;
+	margin: 20px auto 40px auto;
+	transition: .3s;
+	
+	-webkit-filter: grayscale(100%);
+	filter: grayscale(100%);
+	filter: gray; 
+}
+
+.imgT:hover {
+	-webkit-filter: none;	
+	filter: none;	
+}

@@ -1,0 +1,48 @@
+.cardNew{
+    background-color: rgb(75, 82, 113);
+    width: 350px;
+    border: 1px solid gray;
+    box-shadow: 1px 1px 3px #888;
+    border-top: 10px solid green;
+    min-height: 250px;
+    margin: 10px;
+    text-align: center;
+    }
+    
+    img{ 
+      background: black;
+      width: 70px;
+      margin: 10px;
+    }
+    
+    .imgnew{
+        border-radius: 0px;
+        width:90%
+    }
+    
+    h1{ 
+      font-weight: lighter;
+      margin-left: 100px;
+      margin-top: -40px;
+      color:black;
+    }
+    h3 {
+        color: black;
+    }
+    
+    p{
+      margin: 10px;
+      font-family: segoe ui;
+      line-height: 1.4em;
+      font-size: 1.2em;
+      color:black;
+    }
+    
+    #mainbox{ 
+    font-family: calibri;
+    box-sizing: border-box;
+    justify-content: center;
+    display: flex;
+    flex-wrap: wrap;
+    text-align: center
+    }
