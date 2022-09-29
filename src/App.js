@@ -2,13 +2,13 @@ import React from 'react';
 import { Provider } from 'react-redux';
 import { store } from './store/store';
 import { AppRouter } from './router/AppRouter';
-import './assets/css/App.css' 
+import './assets/css/App.css' //style
 
-export const App =() =>{
+export const App = () => {
   return (
-      <Provider store={ store }>
-          <AppRouter />
-      </Provider>
+    <Provider store={store}>
+      <AppRouter />
+    </Provider>
   );
 }
 
